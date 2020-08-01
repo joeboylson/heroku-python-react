@@ -1,6 +1,7 @@
 # HEROKU PYTHON REACT
 
-A boilerplate repo to get you up and running with React, Python, and Heroku.
+A boilerplate repo to get you up and running with React, Python, and Heroku. <br/>
+[See it live](https://salty-lowlands-02435.herokuapp.com/)
 
 <br/>
 
