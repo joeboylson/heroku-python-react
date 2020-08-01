@@ -22,8 +22,8 @@ app.register_blueprint(dist_folder)
 DOWNLOAD_DIRECTORY = "static/images"
 DIST_DIRECTORY = "dist"
 
-# Heroku sets "PYTHON_ENV" to "PRODUCTION"
-IS_PRODUCTION = os.environ.get('PYTHON_ENV') == 'PRODUCTION'
+# Heroku sets "NODE_ENV" to "production"
+IS_PRODUCTION = os.environ.get('NODE_ENV') == 'production'
 DEBUG = True if not IS_PRODUCTION else False
 PORT = 5000 if not IS_PRODUCTION else os.environ.get('PORT')
 
