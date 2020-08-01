@@ -1,13 +1,5 @@
-# BORDERLY
-
 import os
-import math
-import json
-import datetime
-import uuid
-from io import BytesIO
 from flask import Flask, request, redirect, url_for, render_template, send_file, send_from_directory, Blueprint
-from PIL import Image, ImageOps
 
 
 app = Flask(__name__, template_folder='./dist')
