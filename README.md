@@ -41,7 +41,7 @@ A boilerplate repo to get you up and running with React, Python, and Heroku. <br
 - Turn on Automatic Deployments: when you push to master (or any other specified branch), Heroku will rebuild your project and release the new version. This usually takes about 2 minutes.
 
 - Add a Heroku Postgres Add-On: now it's full-stack!
-  - heroku saves the URL for the postgres server is saved in the ENV variable `DATABASE_URL`
+  - heroku saves the URL for the postgres server in the ENV variable `DATABASE_URL`
   - in `schema.py`, reference this variable at `create_engine(...)`
   - SQLAlchemy should do the rest for you
 
