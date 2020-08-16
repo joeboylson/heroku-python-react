@@ -53,16 +53,6 @@ class Response():
     return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
 
-@app.route('/')
-def index():
-  ''' GET - returns "index.html" '''
-
-  if (IS_PRODUCTION):
-    return render_template('index.html')
-  else:
-    return "DEVELOPMENT"
-
-
 # --- NOTE: webpack config proxy is set up to reroute any "/api/..." requests to this backend.
 # --- It's advised that you prefix any new routes with "/api"
 
@@ -76,9 +66,9 @@ def create_user():
     session.add(row)
     session.commit()
     session.refresh(row) # refresh to get the added record
-    response = Response(success=True, data={'id': row.id, 'name': row.name})
+    response = Response(success=True, data={'id': row.id, 'name': row.name}, message='Successfully created user "{}"'.format(row.name))
   except Exception as e:
-      response = Response(error=e)
+      response = Response(error=e, message='Failed to create user')
   finally:
       session.close()
 
@@ -92,14 +82,27 @@ def fetch_all_users():
   try:
     users = session.query(User).all()
     data = [{'id': row.id, 'name': row.name} for row in users]
-    response = Response(success=True, data=data)
+    response = Response(success=True, data=data, message='Successfully fetched all users')
   except Exception as e:
-      response = Response(error=e)
+      response = Response(error=e, message='Error fetching all users')
   finally:
       session.close()
 
   return response.to_json()
 
+
+@app.errorhandler(404)
+def page_not_found(e):
+  ''' GET
+    - if the route doesn't exist, return index.html
+    - useful if using React Router
+  '''
+
+  IS_PRODUCTION = True
+  if (IS_PRODUCTION):
+    return render_template('index.html')
+  else:
+    return render_template('index.html')
 
 # --------------------------------------------------------------------------------
 # START THE APP

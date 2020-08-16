@@ -26,6 +26,8 @@ const App = () => {
   return (
     <main>
 
+      <a href="https://github.com/joeboylson/heroku-python-react" target="_blank">🏠</a>
+
       <section>
         This boilerplate is built with a React.js Frontend,
         and a Flask (Python) backend.
