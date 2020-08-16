@@ -32,3 +32,14 @@ class User(Base):
 Base.metadata.create_all(bind=engine)
 Session = sessionmaker()
 Session.configure(bind=engine)
+
+# add a user
+try:
+    _session = Session()
+    row = User(name='Joe Boylson')
+    _session.add(row)
+    _session.commit()
+except Exception as e:
+    print(e)
+finally:
+    _session.close()
