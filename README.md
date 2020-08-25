@@ -5,7 +5,7 @@ A boilerplate repo to get you up and running with React, Python, and Heroku. <br
 
 <br/>
 
-**UPDATE 08.24.2020:** using [concurrently](https://www.npmjs.com/package/concurrently) for "dev" command;
+**UPDATE 08.24.2020:** using [concurrently](https://www.npmjs.com/package/concurrently) for "dev" command; <br/>
 **UPDATE 08.16.2020:** added SQLAlchemy; set up `user` table; set up fetch and post routes;
 
 <br/>
