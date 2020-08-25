@@ -5,6 +5,7 @@ A boilerplate repo to get you up and running with React, Python, and Heroku. <br
 
 <br/>
 
+**UPDATE 08.24.2020:** using [concurrently](https://www.npmjs.com/package/concurrently) for "dev" command;
 **UPDATE 08.16.2020:** added SQLAlchemy; set up `user` table; set up fetch and post routes;
 
 <br/>
@@ -18,8 +19,9 @@ A boilerplate repo to get you up and running with React, Python, and Heroku. <br
 1. Clone this repo
 2. To install Node depenedencies, run `npm install` (or `yarn install` if you prefer)
 3. To install Python dependencies, run `pip install -r requirements.txt`
-4. Start the Flask server with `python app.py`
-5. Start the Webpack dev server with `npm run dev` (or `yarn dev`)
+4. Start the development environment with `npm run dev` (or `yarn dev`)
+    - to start the Flask server separately, run `npm run app` (or `yarn app`)
+    - to start the Webpack server separately, run `npm run client` (or `yarn client`)
 
 <br/>
 
